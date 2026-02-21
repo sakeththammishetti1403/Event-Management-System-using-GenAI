@@ -52,15 +52,8 @@ AI / Logic
 Rule-based + AI-assisted scheduling logic
 
 🏗️ System Architecture (High Level)
-User Interface
-     ↓
-Django Backend (REST APIs)
-     ↓
-Business Logic (Scheduling + Conflict Detection)
-     ↓
-MongoDB Database
-     ↓
-Notification & Recommendation Engine
+
+<img width="1178" height="788" alt="image" src="https://github.com/user-attachments/assets/e6383e8b-9513-4f6d-b20c-8984a4a2ce01" />
 
 
 🚀 How It Works
