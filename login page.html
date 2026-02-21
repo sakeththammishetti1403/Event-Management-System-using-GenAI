@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="icon" type="image/x-icon" href="C:\Users\thumm\OneDrive\Desktop\shireesha\icon.png">
+</head>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+    body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url('ic.png');
+    background-repeat: no-repeat;
+    background-size: 1300px 600px;
+    }
+    .container{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        height:100vh;
+        width: 100%;
+      
+    }
+    .box{
+        background-color:white;
+        border-radius: 8px;
+        padding: 40px;
+        width: 24%;
+     
+    }
+    h1{
+      text-align: center;
+    text-decoration: underline;
+    }
+    form{
+        margin-bottom: 30px;
+    }
+    .email
+    {
+        height: 45px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .email input{
+        height: 80%;
+        width: 100%;
+    }
+    .email input{
+        height: 80%;
+        width: 100%;
+    }
+    .password
+    {
+        height: 45px;
+        width: 100%;
+      
+    }
+    .password input{
+        height: 80%;
+        width: 100%;
+    }
+    .fp
+    {
+        margin-top: 15px;
+        text-align: center;
+    }
+    .fp a{
+        text-decoration: none;
+    }
+    .fp a:hover{
+        text-decoration: underline;
+    }
+    .b button
+    {
+        height: 40px;
+        width: 400px;
+        margin-top: 10px;
+        border: none;
+        font-size: 15px;
+        font-weight: 200px;
+        margin-bottom: 10px;
+        background-color: #0171d3;
+        border-radius: 4px;
+        cursor: pointer;
+     }
+     .b button span
+     {
+        color: white;
+     }
+     .signup span
+     {
+        font-size: 16px;
+        
+     }
+     .signup
+     {
+        text-align: center;
+     }
+     .signup a{
+        text-decoration: none;
+    }
+    .signup a:hover{
+        text-decoration: underline;
+    }
+    .line
+    {
+        height: 1px;
+        position: relative;
+        background-color: #d4d4d4;
+        width: 100%;
+        margin-top: -15px;
+    }
+    .line::before{
+        content: 'Or';
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: white;
+        padding: 0 15px;
+
+    }
+    .icon1 button
+    {
+        height: 40px;
+        width: 400px;
+        margin-top: 10px;
+        border: none;
+        font-size: 15px;
+        font-weight: 200px;
+        margin-bottom: 10px;
+        background-color: #4267B2;
+        border-radius: 4px;
+        cursor: pointer;
+     }
+     .icon1 a button i
+     {
+        color: white;
+        position: absolute;
+        left: 510px;
+        transform: translate(-50%);
+     }
+     .icon1 span
+     {
+        color: white;
+     }
+     .icon2 button
+    {
+        height: 40px;
+        width: 400px;
+        margin-top: 10px;
+        border: none;
+        font-size: 15px;
+        font-weight: 200px;
+        margin-bottom: 10px;
+       
+        border-radius: 4px;
+        cursor: pointer;
+     }
+     .icon2 a button img
+     {
+        
+        position: absolute;
+        left: 510px;
+        transform: translate(-50%);
+     }
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="box">
+    <form name="form" id="form" autocomplete="off">
+        <h1>Login</h1>
+        <div class="email">
+            <input type="text" name="email" id="em" placeholder="Email">
+            <span style="color: red;"  id="em_error"></span>
+        </div>
+        <div class="password">
+            <input type="password" name="password" id="pass_ver" placeholder="Password">
+            <span style="color: red;"  id="pass_ver_error"></span>
+        </div>
+        <div class="fp">
+            <a href="#">Forgot password?</a>
+        </div>
+        <div class="b">
+            <button type="submit"><span>Login</span></button>
+        </div>
+        <div class="signup">
+            <span>Already have an account?<a href="sign.html">Signup</a></span>
+        </div>
+       
+    </form>    
+        <div class="line"></div>
+        <div class="icon1">
+            <a href="https://www.facebook.com/login.php"><button><i class='bx bxl-facebook-circle' ></i>
+           <span> Login with Facebook</span></button></a>
+        </div>
+        <div class="icon2">
+            <a href="https://accounts.google.com/"><button><img src="C:\Users\thumm\OneDrive\Desktop\shireesha\goggle.png" height="20px" width="20px">
+                Login with Google</button></a>
+        </div>
+        <script>
+            const form=document.getElementById("form");
+            const em=document.getElementById("em");
+            const pass_ver=document.getElementById("pass_ver");
+            const em_error=document.getElementById("em_error");
+            const pass_ver_error=document.getElementById("pass_ver_error");
+            form.addEventListener("submit",function(c){
+            var email_confirm=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if((!em.value.match(email_confirm)))
+            {
+                c.preventDefault();
+                em_error.innerHTML="Enter valid email"; 
+            }
+            else
+            {
+                em_error.innerHTML="";  
+            }
+            if(pass_ver.value.length==0)
+            {
+                c.preventDefault();
+                pass_ver_error.innerHTML="Enter your password to login"
+            }
+            else{
+                pass_ver_error.innerHTML="";
+            }
+
+            if((em.value.match(email_confirm)) &&(pass_ver.value.length>0))
+            {
+                var url="eventhome.html";
+               window.open(url,'_blank');
+               
+            }
+        
+        });
+        
+        </script>
+</div>
+</div>   
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+</head>
+<style>
+    body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url('bg6.jpg');
+    background-repeat: no-repeat;
+    background-size: 1300px 600px;
+    }
+    .container{
+        align-items: center;
+        justify-content: center;
+        display:flex;
+        height:100vh;
+        width: 100%;
+      
+    }
+    .box{
+        background-color:white;
+        border-radius: 8px;
+        padding: 40px;
+        width: 28%;
+
+        
+    }
+    h1{
+      text-align: center;
+    }
+    .name
+    {
+        height: 45px;
+        width: 95%;
+        margin-bottom: 15px;
+    }
+    
+    .name input{
+        height: 80%;
+        width: 100%;
+    }
+
+    
+    .gname{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .b button
+    {
+        height: 40px;
+        width: 345px;
+        margin-top: 10px;
+        border: none;
+        font-size: 15px;
+        font-weight: 200px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        background-color: #0171d3;
+        border-radius: 4px;
+        cursor: pointer;
+     }
+     .b button span
+     {
+        color: white;
+     }
+    
+    .msg p
+    {
+        font-size: 16px;
+        text-align: center;
+    }
+    .msg a{
+        text-decoration: none;
+    }
+    .msg a:hover
+    {
+        text-decoration: underline;
+    }
+    .line
+    {
+        height: 1px;
+        position: relative;
+        background-color: #d4d4d4;
+        width: 100%;
+        margin-top:4px;
+    }
+    .line::before{
+        content: 'Or';
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: white;
+        padding: 0 15px;
+
+    }
+    .signin span
+     {
+        font-size: 16px;
+        
+     }
+     .signin
+     {
+        text-align: center;
+        margin-top: 15px;
+     }
+     .signin a{
+        text-decoration: none;
+    }
+    .signin a:hover{
+        text-decoration: underline;
+    }
+    #fname_error
+    {
+        position: static;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <div class="box">
+            <form name="form" id="form" autocomplete="off">
+                <h1>Create a new account</h1><hr>
+                <div class="name">
+                    <input type="text" id="fname"  placeholder="First name" onchange="upperCase1()"> 
+                    <span style="color: red;"  id="fname_error"></span>
+                </div>
+                <div class="name">
+                    <input type="text" id="lname"  placeholder="Last name" onchange="upperCase2()">
+                    <span style="color: red;"  id="lname_error"></span>
+                </div>
+               
+               <div class="name">
+                    <input type="text" name="email" id="email" placeholder="Email">
+                    <span style="color: red;"  id="email_error"></span>
+                </div>
+                <div class="name">
+                    <input type="password" id="password" name="password" placeholder="Create a new password">
+                    <span style="color: red;"  id="password_error"></span>
+                </div>
+                <div class="name">
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password">
+                    <span style="color: red;"  id="cpassword_error"></span>
+                </div>
+                <div class="b">
+                    <button type="submit"><span>Sign Up</span></button>
+                </div>
+                <div class="msg">
+                    <p>By clicking the Sign Up button, you agree to our<br>
+                    <a href="#">Terms & conditions</a> & <a href="#">Privacy Policy</a></p>
+                </div>
+                <div class="line"></div>
+                <div class="signin">
+                    <span>Already have an account?<a href="login page.html">Signin</a></span>
+                </div>
+            </form>
+           <script>
+            function upperCase1()
+            {
+            const x=document.getElementById("fname");
+            x.value=x.value.toUpperCase();
+            }
+            function upperCase2()
+            {
+            const x=document.getElementById("lname");
+            x.value=x.value.toUpperCase();
+           }
+            const form=document.getElementById("form");
+            const fname=document.getElementById("fname");
+            const lname=document.getElementById("lname");
+            const email=document.getElementById("email");
+            const password=document.getElementById("password");
+            const cpassword=document.getElementById("cpassword");
+            const fname_error=document.getElementById("fname_error");
+            const lname_error=document.getElementById("lname_error");
+            const email_error=document.getElementById("email_error");
+            const password_error=document.getElementById("password_error");
+            const cpassword_error=document.getElementById("cpassword_error");
+
+            form.addEventListener("submit",function(e){
+              
+                var email_check=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if(fname.value==="" ||fname.value==null ) 
+                {    e.preventDefault();
+                    fname_error.innerHTML=" First name is required";
+                }
+                else 
+                {
+                    fname_error.innerHTML="";
+                }
+                if(lname.value==="" ||lname.value==null)
+                {     e.preventDefault();
+                      lname_error.innerHTML="Last name is required";
+                }
+                else
+                {
+                    lname_error.innerHTML="";
+                }
+                if(!email.value.match(email_check))
+                {       e.preventDefault();
+                        email_error.innerHTML="Valid email is required";
+                }
+                else
+                {
+                    email_error.innerHTML="";
+                }
+                if(password.value==="")
+                {    e.preventDefault();
+                    password_error.innerHTML="Enter your password";
+                }
+                else{
+                    password_error.innerHTML="";
+                }
+                if(cpassword.value==="")
+                {    e.preventDefault();
+                    cpassword_error.innerHTML="Confirm your password";
+                }
+                else
+                {
+                    cpassword_error.innerHTML="";  
+                }
+                if(password.value!=cpassword.value)
+                {    e.preventDefault();
+                    cpassword_error.innerHTML="Password should be same";
+                }  
+               
+                if(password.value.length>0 && password.value.length<=6)
+                {
+                    e.preventDefault();
+                    password_error.innerHTML="Password should contain more than 6 characters";
+                }
+                if((fname.value.length>0)&&(lname.value.length>0)&&(email.value.match(email_check))&&(password.value.length>0)&&(cpassword.value.length>0)&&(password.value==cpassword.value))
+                {
+                    alert("Account created successfully")
+                }
+                
+            });
+           </script>
+                
+        </div>
+    </div>
+</body>
+</html>

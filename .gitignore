@@ -1,0 +1,19 @@
+# Python virtual environment
+myenv/
+venv/
+*.pyc
+__pycache__/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Zip files
+*.zip
+
+# Logs
+*.log

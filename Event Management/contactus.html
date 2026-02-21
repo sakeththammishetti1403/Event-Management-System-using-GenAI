@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+    <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/736x/f1/8c/69/f18c69ee55a15ba0203359a8e674047d.jpg">
+    <style>
+        body {
+            background-color: blanchedalmond;
+        }
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .t {
+            padding-left: 320px;
+            font-weight: bold;
+        }
+        .n {
+            padding-left: 250px;
+            color: black;
+        }
+        .st {
+            font-style: italic;
+            color: black;
+        }
+        .input-text {
+            border: solid;
+            border-width: 1px;
+            height: 50px;
+            width: 600px;
+            background-color: white;
+            font-style: normal;
+            text-align: left;
+        }
+        .textarea {
+            border: solid;
+            border-width: 1px;
+            width: 650px;
+            background-color: white;
+            font-style: normal;
+            text-align: left;
+        }
+        .border {
+            text-align: center;
+            border: solid;
+            border-width: 1px;
+            height: 18px;
+            line-height: 12px;
+            width: 45px;
+        }
+        .b5 {
+            text-decoration: none;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .b5 button {
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>CONTACT US</h1><br>
+    <div class="t">
+        <p><h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Send us a message and we'll get back to you as soon as possible.</h2> </p>
+    </div>
+
+    <form id="contactForm" method="post" action="#" onsubmit="return submitForm()">
+        <div class="n">
+            <h2>Name:<span class="st">*</span></h2>
+        </div>
+        <center> 
+            <div>
+                <input type="text" id="name" name="name" class="input-text" placeholder="Enter your name" required>
+            </div>
+        </center>
+
+        <div class="n">
+            <h2>Email:<span class="st">*</span></h2>
+        </div>
+        <center> 
+            <div>
+                <input type="email" id="email" name="email" class="input-text" placeholder="Enter your email" required>
+            </div>
+        </center>
+
+        <div class="n">
+            <h2>Phone Number:<span class="st"></span></h2>
+        </div>
+        <center> 
+            <div>
+                <input type="tel" id="phone" name="phone" class="input-text" placeholder="Enter your phone number">
+            </div>
+        </center>
+
+        <div class="n">
+            <h2>Location:<span class="st"></span></h2>
+        </div>
+        <center> 
+            <div>
+                <input type="text" id="location" name="location" class="input-text" placeholder="Enter your location">
+            </div>
+        </center>
+
+        <div class="n">
+            <h2>Your Message<span class="st">*</span></h2>
+        </div>
+        <center> 
+            <div>
+                <textarea id="message" name="message" class="textarea" rows="4" placeholder="Enter your message" required></textarea>
+            </div>
+        </center>
+        <br><br>
+        <center>
+            <div class="border">
+                <button type="submit" onclick="return submitForn()">SEND</button>
+            </div>
+        </center><br><br>
+    </form>
+
+    <div class="b5">
+        <a href="homeevent.html"><button><-Back</button></a>   
+    </div>
+
+    <script>
+        function submitForm() {
+            alert("Message sent successfully");
+            return true; 
+        }
+    </script>
+</body>
+</html>
