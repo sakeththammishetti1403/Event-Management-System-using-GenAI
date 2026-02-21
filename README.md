@@ -61,6 +61,8 @@ Business Logic (Scheduling + Conflict Detection)
 MongoDB Database
      ↓
 Notification & Recommendation Engine
+
+
 🚀 How It Works
 
 Users create and manage events through the interface.
